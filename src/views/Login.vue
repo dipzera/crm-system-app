@@ -27,7 +27,7 @@
           v-model.trim="password"
           :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
       >
-      <label for="password">Пароль</label>
+      <label for="password">Password</label>
       <small class="helper-text invalid"
         v-if="$v.password.$dirty && !$v.password.required"
       >Please insert password</small>
@@ -42,14 +42,14 @@
           class="btn waves-effect waves-light auth-submit"
           type="submit"
       >
-        Войти
+        Sign in
         <i class="material-icons right">send</i>
       </button>
     </div>
 
     <p class="center">
-      Нет аккаунта?
-      <router-link to="/register">Зарегистрироваться</router-link>
+      No account?
+      <router-link to="/register">Sign Up</router-link>
     </p>
   </div>
 </form>
@@ -74,6 +74,12 @@ export default {
                 this.$v.$touch()
                 return
             }
+            const formData = {
+                email: this.email,
+                password: this.password
+            }
+            // We'll send the validated form data to the server.
+            console.log(formData);
             this.$router.push('/');
         }
     }

@@ -5,7 +5,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import dateFilter from "@/filters/date.filter.js";
-import "materialize-css/dist/js/materialize.min.js";
+import "materialize-css/dist/js/materialize.js";
 
 Vue.config.productionTip = false;
 Vue.filter("date", dateFilter);
