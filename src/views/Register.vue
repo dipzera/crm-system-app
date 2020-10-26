@@ -85,7 +85,7 @@ export default {
         name: { required },
     },
     methods: {
-        submitHandler() {
+        async submitHandler() {
             if (this.$v.$invalid) {
                 this.$v.$touch()
                 return
@@ -95,8 +95,11 @@ export default {
                 password: this.password,
                 name: this.name,
             }
+            try {
+            await this.$store.dispatch('register', formData);
             this.$router.push('/')
-            console.log(formData);
+            } catch(e) {
+            }
         },
     }
 }
