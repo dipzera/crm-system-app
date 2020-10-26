@@ -74,7 +74,7 @@ export default {
         }
     },
     methods: {
-        submitHandler() {
+        async submitHandler() {
             console.log(this.$v.password)
             if (this.$v.$invalid) {
                 this.$v.$touch()
@@ -84,9 +84,13 @@ export default {
                 email: this.email,
                 password: this.password
             }
+            /* eslint-disable */
+            try {
+                await this.$store.dispatch('login', formData);
+                this.$router.push('/');
+            } catch {
+            }
             // We'll send the validated form data to the server.
-            console.log(formData);
-            this.$router.push('/');
         }
     }
 }

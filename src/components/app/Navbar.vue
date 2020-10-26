@@ -29,7 +29,7 @@
               <li class="divider" tabindex="-1"></li>
               <li>
                 <a href="#" class="black-text" @click.prevent="logout">
-                  <i class="material-icons">assignment_return</i>Выйти
+                  <i class="material-icons">assignment_return</i>Sign out
                 </a>
               </li>
             </ul>
