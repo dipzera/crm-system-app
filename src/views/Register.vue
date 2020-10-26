@@ -49,7 +49,7 @@
 
     <p class="center">
       Уже есть аккаунт?
-      <a href="/">Войти!</a>
+      <router-link to="/login">Войти!</router-link>
     </p>
   </div>
 </form>
