@@ -22,12 +22,17 @@
 <script>
 import Navbar from '@/components/app/Navbar.vue';
 import Sidebar from '@/components/app/Sidebar.vue';
-
+import firebase from 'firebase/app';
 export default {
     name: 'main-layout',
     data: () => ({
         isOpen: true
     }),
+    async mounted() {
+        if (!Object.keys(this.$store.getters.info).length) {
+            await this.$store.dispatch('fetchInfo');
+        }
+    },
     components: {
         Navbar, Sidebar
     }

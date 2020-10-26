@@ -16,7 +16,7 @@
                 data-target="dropdown"
                 ref="dropdown"
             >
-              USER NAME
+              {{this.$store.getters.info.name}}
               <i class="material-icons right">arrow_drop_down</i>
             </a>
 
