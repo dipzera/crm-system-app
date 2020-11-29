@@ -21,7 +21,6 @@
 // @ is an alias to /src
 import HomeBill from "@/components/HomeBill";
 import HomeCurrency from "@/components/HomeCurrency";
-
 export default {
     name: "Home",
     data: () => ({

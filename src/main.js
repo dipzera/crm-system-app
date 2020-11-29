@@ -20,7 +20,6 @@ Vue.filter("date", dateFilter);
 Vue.filter("currency", currencyFilter);
 Vue.use(Vuelidate);
 Vue.component("Loader", Loader);
-
 firebase.initializeApp({
     apiKey: "AIzaSyBfF1sZ5qrYQhCfkGl2U5Y5cZhnBLfCscg",
     authDomain: "vue-crud-app-13992.firebaseapp.com",
