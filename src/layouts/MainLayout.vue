@@ -12,7 +12,11 @@
             </main>
 
             <div class="fixed-action-btn">
-                <router-link class="btn-floating btn-large blue" to="/record">
+                <router-link
+                    class="btn-floating btn-large blue"
+                    to="/record"
+                    v-tooltip="'Create new record'"
+                >
                     <i class="large material-icons">add</i>
                 </router-link>
             </div>
@@ -25,6 +29,7 @@ import Navbar from "@/components/app/Navbar.vue";
 import Sidebar from "@/components/app/Sidebar.vue";
 import Loader from "@/components/app/Loader.vue";
 import firebase from "firebase/app";
+import messages from "@/utils/messages";
 export default {
     name: "main-layout",
     data: () => ({
@@ -41,6 +46,18 @@ export default {
         Navbar,
         Sidebar,
         Loader,
+    },
+    computed: {
+        error() {
+            return this.$store.getters.error;
+        },
+    },
+    watch: {
+        error(firebaseError) {
+            this.$error(
+                messages[firebaseError.code] || "Something went wrong!"
+            );
+        },
     },
 };
 </script>
