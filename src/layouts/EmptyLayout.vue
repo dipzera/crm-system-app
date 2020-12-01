@@ -1,12 +1,11 @@
 <template>
-    
-<div class="grey darken-1 empty-layout">
-    <router-view/>
-</div>
+    <div class="grey darken-1 empty-layout">
+        <router-view />
+    </div>
 </template>
 
 <script>
-import messages from '@/utils/messages';
+import messages from "@/utils/messages";
 export default {
     computed: {
         error() {
@@ -15,8 +14,10 @@ export default {
     },
     watch: {
         error(firebaseError) {
-            this.$error(messages[firebaseError.code] || 'Something went wrong!') 
+            this.$error(
+                messages[firebaseError.code] || "Something went wrong!"
+            );
         },
     },
-}
+};
 </script>
