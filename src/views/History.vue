@@ -33,6 +33,11 @@ import paginationMixin from "@/mixins/pagination.mixin";
 import HistoryTable from "@/components/HistoryTable";
 import { Pie } from "vue-chartjs";
 export default {
+    metaInfo() {
+        return {
+            title: this.$title("History"),
+        };
+    },
     name: "history",
     extends: Pie,
     mixins: [paginationMixin],
