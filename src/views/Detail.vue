@@ -6,7 +6,7 @@
                 <router-link to="/history" class="breadcrumb">
                     History
                 </router-link>
-                <a class="breadcrumb">
+                <a @click.prevent class="breadcrumb">
                     {{ record.type === "income" ? "Income" : "Expense" }}
                 </a>
             </div>
