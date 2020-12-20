@@ -20,9 +20,7 @@ const routes = [
     },
     {
         path: "/",
-        name: "Home",
-        meta: { layout: "main", auth: true },
-        component: () => import("../views/Home.vue"),
+        redirect: "/history",
     },
     {
         path: "/categories",
