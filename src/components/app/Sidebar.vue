@@ -21,6 +21,10 @@ export default {
     data: () => ({
         links: [
             {
+              title: "Home",
+              url: "/home"
+            },
+            {
                 title: "History",
                 url: "/history",
             },
